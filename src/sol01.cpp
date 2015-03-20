@@ -1,3 +1,11 @@
+/* Brute force implementation
+* 	query(x, y):
+*		get x and y on the same level
+*		move un with them in parallel until they meet
+*	TIME:   O(N), O(H) per query
+*	MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *T, *depth;

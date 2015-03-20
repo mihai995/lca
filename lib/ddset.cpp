@@ -1,3 +1,12 @@
+/*
+* Disjoint data set implementation.
+* Functionality:
+	* Every set is indexed by the best element (i.e the one that is listed the first in update operations)
+	* Link: merge the set containing x and the set containing y
+	* operator []: return the handle for the set containing x
+* Complexity: O(log* N) per operation, O(N) memory
+*/
+
 #include <cstdlib>
 #include "ddset.h"
 

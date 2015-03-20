@@ -1,3 +1,5 @@
+//Typical N * M matrix
+
 #include "matrix.h"
 #include <cstring>
 
@@ -6,10 +8,8 @@ Matrix :: Matrix() : buf(NULL)
 
 void Matrix :: build(int N, int M, int* buf){
 	this -> buf = new int[N * M]();
-	if (buf) {
+	if (buf)
 		memcpy( this -> buf, buf, M * sizeof(int) );
-//		delete[] buf;
-	}
 	lineSize = M;
 }
 

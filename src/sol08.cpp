@@ -1,3 +1,9 @@
+/* Heavy path
+* 	Binary search over the previous solution (sol07)
+*       TIME:   O(N loglogN) pre-processing, O(loglogN) per query
+*       MEMORY: O(N loglogN)
+*/
+
 #include "lib/matrix.h"
 #include "lib/tree.h"
 

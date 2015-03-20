@@ -1,3 +1,13 @@
+/* Heavy path
+*	Breaks down the tree into heavy paths and connects each node to the
+*	ancestor immediately above the heavy path corresponding to the node
+*	Due to this structure, the LCA must be at the end of such a path
+*	at least on one of the sides. Furthermore, each node is at most
+*	logN such jumps away from the root
+*       TIME:   O(N) pre-processing, O(logN) per query
+*       MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *head, *weight, *son;

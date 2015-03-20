@@ -1,3 +1,14 @@
+/* Fast RMQ on the Euler traverse
+*	The same approach as sol14 with a few alterations:
+*		build buckets of size logN and apply sol14 on these buckets ( => O(N) )
+* 		anything of size <= bucket size can be represented as a bit mask and pre-processed
+*		using the binary RMQ data structure ( => O( 2 ^ (log N) )
+*       TIME:   O(N) pre-processing
+		O(1) per query
+*       MEMORY: O(N)
+*	NOTE: proven lower bound on the algorithm, but slightly slower in practice because of the high constant
+*/
+
 #include "lib/bin_rmq.h"
 #include "lib/rmq.h"
 #include "lib/tree.h"

@@ -1,3 +1,11 @@
+/* SQRT Jumps
+*	Analogue to sol01, but instead of moving up linearly,
+*	it jumps chuks of sqrt(H) nodes
+*	TIME:   O(N) pre-processing
+		O( sqrt(H) ) per query
+*	MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *T, *depth, *head;

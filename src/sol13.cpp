@@ -1,3 +1,9 @@
+/* Segment tree on the Euler traverse
+*       TIME:   O(N) pre-processing
+		O(log N) per query
+*       MEMORY: O(N)
+*/
+
 #include "lib/segment_tree.h"
 #include "lib/tree.h"
 

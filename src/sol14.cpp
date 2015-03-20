@@ -1,3 +1,9 @@
+/* Range minimum query on the Euler traverse
+*       TIME:   O(Nlog N) pre-processing
+		O(1) per query
+*       MEMORY: O(NlogN)
+*/
+
 #include "lib/rmq.h"
 #include "lib/tree.h"
 

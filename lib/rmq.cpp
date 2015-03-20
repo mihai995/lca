@@ -1,3 +1,10 @@
+/*
+* Range minimum query implementation
+* Functionality: Takes a sequence of integers and a comparison function and can answer questions of the form
+	query(x, y) = what is the best element in the interval [x; y]
+* Complexity: pre-preocessing: O(NlogN) time and memory, O(1) per query
+*/
+
 #include "matrix.h"
 #include "rmq.h"
 

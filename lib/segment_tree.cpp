@@ -1,3 +1,11 @@
+/*
+* Segment tree implementation (lacks implementation for update function)
+* Functionality: takes a sequence of numbers and a comparison function and answers questions of the form:
+	query(x, y) = what is the best element in the interval [x; y]
+* Complexity: O(N) pre-processing time and memory, O(logN) per query
+* NOTE: it is not the classical implementation of segment trees, because I wanted to avoid recursion
+*/
+
 #include <cstdlib>
 #include <cstring>
 #include "segment_tree.h"

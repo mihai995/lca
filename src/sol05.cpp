@@ -1,3 +1,9 @@
+/* Binary search
+* 	Analogue to sol01 and sol03, but bynary searches the destination
+*	TIME:	O(NlogN) pre-processing, O(logN) per query
+*	MEMORY: O(NlogN)
+*/
+
 #include "lib/tree.h"
 #include "lib/matrix.h"
 

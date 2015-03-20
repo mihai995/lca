@@ -1,3 +1,13 @@
+/* Stack search
+*	Offline algorithm:
+*		Mark query(x, y) in both x and y
+*		Do a DFS search, remember the entering time for each node
+*		When encountering a query the second time, binary search the entrance
+*		time of y on the ancestor stack of x.
+*	TIME:	O(N + QLogH)
+*	MEMORY: O(N + Q)
+*/
+
 #include "lib/stack.h"
 #include "lib/tree.h"
 

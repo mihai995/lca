@@ -1,3 +1,5 @@
+// Simple stack
+
 #include <cstdlib>
 #include "stack.h"
 

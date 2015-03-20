@@ -1,3 +1,10 @@
+/* Brute force implementation
+*	query(x, y):
+*		move up with x until it becomes an ancestor of y
+*	TIME:   O(N), O(H) per query
+*	MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *start, *stop;

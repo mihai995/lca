@@ -1,3 +1,8 @@
+/* Linear search on the Euler traverse
+*	TIME: 	O(N * Q)
+*	MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *T, *depth, *euler;

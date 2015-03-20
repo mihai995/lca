@@ -1,3 +1,10 @@
+/* Offline algorithm: Tarjan's LCA algorithm
+*	Similar to the previous approach, but use a disjoint data set instead of binary search.
+*	TIME: 	O(Nlog*N + Q) -- NOTE: log* N = the iterated logarithm = the number of time we 
+			can apply log such that N > 1. For any reasonably sized N, log* N <= 5
+*	MEMORY: O(N + Q)
+*/
+
 #include "lib/stack.h"
 #include "lib/ddset.h"
 #include "lib/tree.h"

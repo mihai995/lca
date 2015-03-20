@@ -1,3 +1,9 @@
+/* Bucketed search on the Euler traverse (bucket size = sqrtN)
+*       TIME:   O(N) pre-processing
+		O(sqrtN) per query
+*       MEMORY: O(N)
+*/
+
 #include "lib/tree.h"
 
 int *T, *depth, *euler;
