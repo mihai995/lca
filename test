@@ -1,0 +1,29 @@
+#!/bin/bash
+
+sep="========================"
+fout="lca.out"
+
+if [ -n "$1" ]; then
+	files=src/sol$1.cpp
+else
+	files=$( ls src/*.cpp )
+fi
+
+for file in $files
+do
+	./build $file
+	if ! [ -f lca ]; then
+		echo $file" failed to compile"
+		exit -1
+	fi
+
+	echo ${file#src/}
+	echo $sep
+
+	printf "No\tTime\tMemory\n"
+	awk '/^[^N]/{
+		system("./gen/test "$1" "$2" "$3" "$4)
+	}' < test.conf
+done
+
+rm lca lca.out 2> /dev/null

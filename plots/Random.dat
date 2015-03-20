@@ -1,0 +1,11 @@
+	set term postscript solid color eps enhanced "Helvetica" 16 lw 4 
+	set title 'Random' 
+	set key left 
+	set xlabel 'Number of Queries' 
+	set ylabel 'Time (in seconds)' 
+	set output 'plots/Random.ps' 
+	set grid
+plot 		'stats/Random/BruteForce_one-side' w l title 'BruteForce one-side', \
+		'stats/Random/Heavy_Path_logN' w l title 'Heavy Path logN', \
+		'stats/Random/RMQ_NlogN' w l title 'RMQ NlogN', \
+		'stats/Random/SQRT_Jump_one-side' w l title 'SQRT Jump one-side', \

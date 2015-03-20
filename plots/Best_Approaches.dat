@@ -1,0 +1,14 @@
+	set term postscript solid color eps enhanced "Helvetica" 16 lw 4 
+	set title 'Best Approaches' 
+	set key left 
+	set xlabel 'Number of Queries' 
+	set ylabel 'Time (in seconds)' 
+	set output 'plots/Best_Approaches.ps' 
+	set grid
+plot 		'stats/Best_Approaches/Binary_Search_one-side' w l title 'Binary Search one-side', \
+		'stats/Best_Approaches/Heavy_Path_logN' w l title 'Heavy Path logN', \
+		'stats/Best_Approaches/RMQ_NlogN' w l title 'RMQ NlogN', \
+		'stats/Best_Approaches/RMQ_Optimal' w l title 'RMQ Optimal', \
+		'stats/Best_Approaches/Segment_Tree' w l title 'Segment Tree', \
+		'stats/Best_Approaches/Stack_Binary_Search' w l title 'Stack Binary Search', \
+		'stats/Best_Approaches/Tarjan' w l title 'Tarjan', \

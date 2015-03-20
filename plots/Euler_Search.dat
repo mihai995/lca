@@ -1,0 +1,11 @@
+	set term postscript solid color eps enhanced "Helvetica" 16 lw 4 
+	set title 'Euler Search' 
+	set key left 
+	set xlabel 'Number of Queries' 
+	set ylabel 'Time (in seconds)' 
+	set output 'plots/Euler_Search.ps' 
+	set grid
+plot 		'stats/Euler_Search/Euler_N' w l title 'Euler N', \
+		'stats/Euler_Search/Euler_sqrtN' w l title 'Euler sqrtN', \
+		'stats/Euler_Search/RMQ_NlogN' w l title 'RMQ NlogN', \
+		'stats/Euler_Search/Segment_Tree' w l title 'Segment Tree', \

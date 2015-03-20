@@ -1,0 +1,15 @@
+	set term postscript solid color eps enhanced "Helvetica" 16 lw 4 
+	set title 'Tree Search' 
+	set key left 
+	set xlabel 'Number of Queries' 
+	set ylabel 'Time (in seconds)' 
+	set output 'plots/Tree_Search.ps' 
+	set grid
+plot 		'stats/Tree_Search/Binary_Search_one-side' w l title 'Binary Search one-side', \
+		'stats/Tree_Search/Binary_Search_parallel' w l title 'Binary Search parallel', \
+		'stats/Tree_Search/BruteForce_one-side' w l title 'BruteForce one-side', \
+		'stats/Tree_Search/BruteForce_parallel' w l title 'BruteForce parallel', \
+		'stats/Tree_Search/Heavy_Path_loglogN' w l title 'Heavy Path loglogN', \
+		'stats/Tree_Search/Heavy_Path_logN' w l title 'Heavy Path logN', \
+		'stats/Tree_Search/SQRT_Jump_one-side' w l title 'SQRT Jump one-side', \
+		'stats/Tree_Search/SQRT_Jump_parallel' w l title 'SQRT Jump parallel', \

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+FLAGS=-Wno-unused-result" "-O2
+
+Libs=""
+for src in $( ls lib/*.cpp )
+do
+	obj=${src%.cpp}.o
+	lib=${src%.cpp}.h
+	if ! [ -f $obj ] || [ $src -nt $obj ] || [ $lib -nt $obj ]; then
+		g++ -c $FLAGS $src -o $obj
+		Libs=${Libs}" "${obj#lib/}
+	fi
+done
+
+if [ -n "$Libs" ]; then
+	echo Built${Libs}
+	echo "----------"
+fi
+
+if [ -f $1 ]; then
+	file=$1
+else if [ -f src/$1 ]; then
+	file=src/$1
+else
+	file=src/sol$1.cpp
+fi
+fi
+
+if ! [ -f $file ]; then
+	echo "Failed to read "$1
+	exit -1
+fi
+
+cp $file lca.cpp
+g++ $FLAGS lca.cpp `ls lib/*.o` -o lca
+rm lca.cpp

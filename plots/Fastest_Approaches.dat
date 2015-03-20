@@ -1,0 +1,11 @@
+	set term postscript solid color eps enhanced "Helvetica" 16 lw 4 
+	set title 'Fastest Approaches' 
+	set key left 
+	set xlabel 'Number of Queries' 
+	set ylabel 'Time (in seconds)' 
+	set output 'plots/Fastest_Approaches.ps' 
+	set grid
+plot 		'stats/Fastest_Approaches/Heavy_Path_logN' w l title 'Heavy Path logN', \
+		'stats/Fastest_Approaches/RMQ_NlogN' w l title 'RMQ NlogN', \
+		'stats/Fastest_Approaches/RMQ_Optimal' w l title 'RMQ Optimal', \
+		'stats/Fastest_Approaches/Tarjan' w l title 'Tarjan', \

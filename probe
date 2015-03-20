@@ -1,0 +1,36 @@
+#! /bin/bash
+
+if [ -n "$1" ] && [ -f $1 ]; then
+	conf=$1
+else
+	conf="probe.conf"
+fi
+
+target="stats/"
+if ! [ -d $target ]; then
+	mkdir $target
+fi
+
+awk -v target=$target ' /^#/{
+	folder = (target $2 "/")
+	N      = (double) $3
+	H      = (double) $4
+	start  = (double) $5
+	stop   = (double) $6
+	system("mkdir "folder" 2> /dev/null")
+}
+/^[^#H]/{
+	file = (folder $2)
+	system("./build "$1)
+
+	Q = start
+	times = stop / start
+
+	system("echo 0 0 > "file)
+	while (times--) {
+		system("./gen/genIN lca.in "N" "H" "Q)
+		system("(/usr/bin/time -f \"" Q "\t%e\" ./lca lca.in lca.out) 2>> " file)
+		Q += start
+	}
+	system("rm lca lca.in lca.out 2> /dev/null")
+}' < $conf

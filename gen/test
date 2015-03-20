@@ -1,0 +1,15 @@
+#!/bin/bash
+
+fin=lca.in
+fok=lca.ok
+fout=lca.out
+
+./gen/genIN $fin $2 $3 $4
+./gen/genOK $fin $fok
+(/usr/bin/time -f "$1\t%e\t%M kB\t\t" ./lca $fin $fout) 2>&1
+if [ -n "`diff -q $fout $fok`" ]; then
+	printf "Wrong Answer! "
+	printf `diff -y $fout $fok --suppress-common-lines | wc -l`
+	printf " mistakes!\n"
+fi
+rm $fin $fout $fok
