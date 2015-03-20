@@ -1,0 +1,44 @@
+# lca
+A Comparison Between Various Lowest Common Ancestor Algorithms
+
+This project covers 15 approaches to the LCA problem. It is divided into 7 libraries, a few testing utilities and the standalone solutions. Every source code contains extensive comments. A few essentials:
+
+> the solutions are in src and are named sol01 through sol15
+> all of them use the "tree.h" library, which contains a few fundamental functions, including the I/O and a Depth First Search function (without recursion)
+> the other libraries are data structures used in some of the solutions
+
+Uttilities:
+> build takes the name or number of a solution and compiles it
+> test is an utility that checks the correctness of the solutions. It can be called in the following ways:
+            $ ./test
+            $ ./test 13
+    In other words, it takes the number of a solution (or name) and checks it. If no name is mentioned, it checks everything.
+    Test runs randomly generated tests that respect the structure described in test.conf:
+        No     N   H   Q
+        01    20   4  20
+        02   100  15 200
+        03   1e3 200 1e4
+        04   1e4 2e3 1e5
+        05   1e6   0 1e3
+      The columns represent (in order) the test count, tree size, minimum tree depth and number of queries. For instance the third line (with number 02) describes a test with a tree that has 100 nodes, depth 15 and 200 queries.
+> probe assesses the performance of algorithms and generates data intended to be plotted. It takes a config file (defaults to probe.conf) of the following kind:
+
+Header||--------NameOfPlot--------||--NodeCount--||--MinHeight--||--MinQueryCnt--||--MaxQueryCnt--||
+#	              Tree_Search		          	1e4	          3e3	          	1e3		        2e5
+   01	BruteForce_parallel
+   02	BruteForce_one-side
+   03	SQRT_Jump_parallel
+   04	SQRT_Jump_one-side
+   05	Binary_Search_parallel
+   06 Binary_Search_one-side
+   07	Heavy_Path_logN
+   08	Heavy_Path_loglogN
+# 	             Offline				          1e6	         	3e5        		1e5 	         	2e7
+   09	Stack_Binary_Search
+   10	Tarjan
+
+  The header is intended to describe a table. Each line that stats with a hashtag represents a group of test data and each subsequent line names the source number and algorithm name. The output is printed in a folder named stats. Each section (those marked with hashtag) will be mapped into a folder and each other line into a file containing the plot description.
+  
+> the plot utility takes the data gathered by probe and turns it into postscript plots built using gnuplot. 
+
+As collecting this data takes a long time, I included my findings.
